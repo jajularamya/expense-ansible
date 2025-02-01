@@ -63,3 +63,10 @@
       login_password: ExpenseApp@1
       login_host: mysql.ramyaaws.online
       target: /app/schema/backend.sql
+
+   - name: demon reload and restart service
+     ansible.builtin.systemd_service:
+      enable: yes
+      state: restarted
+      demon_reload: true
+      name: backend   
